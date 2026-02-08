@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GHK-Cu Hair Growth Serum | PEPTATION</title>
+  <meta name="description" content="Peptation's flagship GHK-Cu copper peptide serum. Clinically proven to increase hair count by 36%. No side effects. 30ml.">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <style>
+    .product-page {
+      padding-top: 80px;
+    }
+    
+    .product-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      padding: var(--space-12) 0;
+    }
+    
+    @media (max-width: 1024px) {
+      .product-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+      }
+    }
+    
+    /* Gallery */
+    .product-gallery {
+      position: sticky;
+      top: 100px;
+    }
+    
+    .gallery-main {
+      aspect-ratio: 1;
+      background-color: var(--color-surface);
+      margin-bottom: var(--space-4);
+      overflow: hidden;
+    }
+    
+    .gallery-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+    
+    .gallery-main:hover img {
+      transform: scale(1.05);
+    }
+    
+    .gallery-thumbs {
+      display: flex;
+      gap: var(--space-3);
+    }
+    
+    .gallery-thumb {
+      width: 80px;
+      height: 80px;
+      background-color: var(--color-surface);
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color var(--transition-fast);
+    }
+    
+    .gallery-thumb:hover,
+    .gallery-thumb.active {
+      border-color: var(--color-primary);
+    }
+    
+    .gallery-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    /* Product Info */
+    .product-detail {
+      max-width: 540px;
+    }
+    
+    .product-breadcrumb {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-6);
+    }
+    
+    .product-breadcrumb a {
+      color: var(--color-text-muted);
+    }
+    
+    .product-breadcrumb a:hover {
+      color: var(--color-primary);
+    }
+    
+    .product-detail-title {
+      font-size: var(--text-4xl);
+      margin-bottom: var(--space-4);
+    }
+    
+    .product-rating {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-6);
+    }
+    
+    .rating-stars {
+      display: flex;
+      gap: 2px;
+      color: var(--color-gold);
+    }
+    
+    .rating-count {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+    
+    .product-detail-price {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-4);
+      margin-bottom: var(--space-6);
+      padding-bottom: var(--space-6);
+      border-bottom: 1px solid var(--color-border);
+    }
+    
+    .price-main {
+      font-size: var(--text-3xl);
+      font-weight: var(--font-semibold);
+    }
+    
+    .price-was {
+      font-size: var(--text-lg);
+      color: var(--color-text-muted);
+      text-decoration: line-through;
+    }
+    
+    .price-save {
+      font-size: var(--text-sm);
+      font-weight: var(--font-medium);
+      color: var(--color-success);
+    }
+    
+    .product-description {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-8);
+    }
+    
+    /* Quantity Selector */
+    .quantity-selector {
+      margin-bottom: var(--space-6);
+    }
+    
+    .quantity-label {
+      font-size: var(--text-sm);
+      font-weight: var(--font-medium);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+      margin-bottom: var(--space-3);
+    }
+    
+    .quantity-options {
+      display: flex;
+      gap: var(--space-3);
+    }
+    
+    .quantity-option {
+      flex: 1;
+      padding: var(--space-4);
+      border: 2px solid var(--color-border);
+      background: var(--color-background);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      text-align: center;
+    }
+    
+    .quantity-option:hover {
+      border-color: var(--color-primary);
+    }
+    
+    .quantity-option.active {
+      border-color: var(--color-primary);
+      background-color: var(--color-surface);
+    }
+    
+    .quantity-option-title {
+      font-weight: var(--font-semibold);
+      margin-bottom: var(--space-1);
+    }
+    
+    .quantity-option-price {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+    
+    .quantity-option-save {
+      font-size: var(--text-xs);
+      color: var(--color-gold);
+      font-weight: var(--font-medium);
+    }
+    
+    /* Subscribe Option */
+    .subscribe-option {
+      background-color: var(--color-surface);
+      padding: var(--space-5);
+      margin-bottom: var(--space-6);
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+    }
+    
+    .subscribe-checkbox {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--color-primary);
+    }
+    
+    .subscribe-text {
+      flex: 1;
+    }
+    
+    .subscribe-title {
+      font-weight: var(--font-medium);
+      margin-bottom: var(--space-1);
+    }
+    
+    .subscribe-subtitle {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+    
+    /* Add to Cart */
+    .add-to-cart-section {
+      margin-bottom: var(--space-8);
+    }
+    
+    .btn-add-cart {
+      width: 100%;
+      padding: var(--space-5) var(--space-8);
+      font-size: var(--text-base);
+    }
+    
+    /* Trust Points */
+    .trust-points {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--color-border);
+    }
+    
+    .trust-point {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+    }
+    
+    .trust-point svg {
+      width: 20px;
+      height: 20px;
+      color: var(--color-gold);
+      flex-shrink: 0;
+    }
+    
+    /* Tabs */
+    .product-tabs {
+      margin-top: var(--space-16);
+      border-top: 1px solid var(--color-border);
+    }
+    
+    .tabs-nav {
+      display: flex;
+      border-bottom: 1px solid var(--color-border);
+    }
+    
+    .tab-btn {
+      padding: var(--space-5) var(--space-8);
+      font-size: var(--text-sm);
+      font-weight: var(--font-medium);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+      color: var(--color-text-muted);
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    
+    .tab-btn:hover,
+    .tab-btn.active {
+      color: var(--color-primary);
+      border-bottom-color: var(--color-primary);
+    }
+    
+    .tab-content {
+      display: none;
+      padding: var(--space-10) 0;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    .tab-content h3 {
+      font-size: var(--text-2xl);
+      margin-bottom: var(--space-6);
+    }
+    
+    .tab-content p,
+    .tab-content li {
+      color: var(--color-text-muted);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-4);
+    }
+    
+    .tab-content ul {
+      padding-left: var(--space-6);
+    }
+    
+    .tab-content li {
+      list-style: disc;
+    }
+    
+    .ingredients-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+    }
+    
+    @media (max-width: 768px) {
+      .ingredients-list {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .ingredient-item {
+      padding: var(--space-5);
+      background-color: var(--color-surface);
+    }
+    
+    .ingredient-name {
+      font-weight: var(--font-semibold);
+      margin-bottom: var(--space-2);
+    }
+    
+    .ingredient-desc {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img src="../../assets/images/logo-peptation.png" alt="PEPTATION">
+        </a>
+        
+        <nav class="nav">
+          <a href="index.html#science" class="nav-link">Science</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="how-it-works.html" class="nav-link">How It Works</a>
+          <a href="index.html#results" class="nav-link">Results</a>
+          <a href="index.html#faq" class="nav-link">FAQ</a>
+        </nav>
+        
+        <div class="header-actions">
+          <a href="#" class="btn btn-primary btn-sm">Cart (0)</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Product Page -->
+  <main class="product-page">
+    <div class="container">
+      
+      <div class="product-layout">
+        <!-- Gallery -->
+        <div class="product-gallery">
+          <div class="gallery-main">
+            <img src="../../assets/images/product-bottle-box.jpg" alt="GHK-Cu Hair Growth Serum" id="mainImage">
+          </div>
+          <div class="gallery-thumbs">
+            <div class="gallery-thumb active" data-src="../../assets/images/product-bottle-box.jpg">
+              <img src="../../assets/images/product-bottle-box.jpg" alt="">
+            </div>
+            <div class="gallery-thumb" data-src="../../assets/images/product-box-front.jpg">
+              <img src="../../assets/images/product-box-front.jpg" alt="">
+            </div>
+            <div class="gallery-thumb" data-src="../../assets/images/product-box-angle.jpg">
+              <img src="../../assets/images/product-box-angle.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product Info -->
+        <div class="product-detail">
+          <div class="product-breadcrumb">
+            <a href="index.html">Home</a> / <a href="shop.html">Shop</a> / Serum
+          </div>
+          
+          <h1 class="product-detail-title">GHK-Cu Hair Growth Serum</h1>
+          
+          <div class="product-rating">
+            <div class="rating-stars">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="rating-count">1,695 reviews</span>
+          </div>
+          
+          <div class="product-detail-price">
+            <span class="price-main">$59</span>
+            <span class="price-was">$89</span>
+            <span class="price-save">Save 34%</span>
+          </div>
+          
+          <p class="product-description">
+            Our flagship copper peptide formula. 30ml of concentrated GHK-Cu — clinically proven to increase hair count by 36% in 180 days. Reactivates dormant follicles, reduces inflammation, and promotes natural regrowth with zero side effects.
+          </p>
+          
+          <!-- Quantity Selector -->
+          <div class="quantity-selector">
+            <div class="quantity-label">Select Quantity</div>
+            <div class="quantity-options">
+              <div class="quantity-option active" data-qty="1" data-price="59">
+                <div class="quantity-option-title">1 Bottle</div>
+                <div class="quantity-option-price">$59</div>
+              </div>
+              <div class="quantity-option" data-qty="2" data-price="99">
+                <div class="quantity-option-title">2 Bottles</div>
+                <div class="quantity-option-price">$99</div>
+                <div class="quantity-option-save">Save $19</div>
+              </div>
+              <div class="quantity-option" data-qty="3" data-price="139">
+                <div class="quantity-option-title">3 Bottles</div>
+                <div class="quantity-option-price">$139</div>
+                <div class="quantity-option-save">Save $38</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Subscribe -->
+          <label class="subscribe-option">
+            <input type="checkbox" class="subscribe-checkbox">
+            <div class="subscribe-text">
+              <div class="subscribe-title">Subscribe & Save 10%</div>
+              <div class="subscribe-subtitle">Delivered monthly. Cancel anytime.</div>
+            </div>
+          </label>
+          
+          <!-- Add to Cart -->
+          <div class="add-to-cart-section">
+            <button class="btn btn-primary btn-add-cart">Add to Cart — $59</button>
+          </div>
+          
+          <!-- Trust Points -->
+          <div class="trust-points">
+            <div class="trust-point">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              <span>90-Day Money-Back Guarantee</span>
+            </div>
+            <div class="trust-point">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="3" width="15" height="13"/>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                <circle cx="5.5" cy="18.5" r="2.5"/>
+                <circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+              <span>Free Worldwide Shipping</span>
+            </div>
+            <div class="trust-point">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              <span>91% Success Rate — Zero Side Effects</span>
+            </div>
+            <div class="trust-point">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <span>Results in 4-6 Weeks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Tabs -->
+      <div class="product-tabs">
+        <div class="tabs-nav">
+          <button class="tab-btn active" data-tab="how-to-use">How to Use</button>
+          <button class="tab-btn" data-tab="ingredients">Ingredients</button>
+          <button class="tab-btn" data-tab="reviews">Reviews</button>
+        </div>
+        
+        <div class="tab-content active" id="how-to-use">
+          <h3>How to Use</h3>
+          <p>For best results, follow this simple daily routine:</p>
+          <ul>
+            <li><strong>Step 1:</strong> Apply 5-6 drops of serum directly to clean, dry scalp</li>
+            <li><strong>Step 2:</strong> Massage gently into scalp for 1-2 minutes to improve absorption</li>
+            <li><strong>Step 3:</strong> Leave in — do not rinse. Style as usual</li>
+            <li><strong>Step 4:</strong> Use once daily, preferably before bed</li>
+          </ul>
+          <p>One bottle lasts approximately 30 days with daily use. For optimal results, we recommend using consistently for at least 90 days.</p>
+        </div>
+        
+        <div class="tab-content" id="ingredients">
+          <h3>Key Ingredients</h3>
+          <div class="ingredients-list">
+            <div class="ingredient-item">
+              <div class="ingredient-name">GHK-Cu (Copper Peptides)</div>
+              <p class="ingredient-desc">Reactivates dormant follicles and increases growth factors. Clinically proven to boost hair count by 36%.</p>
+            </div>
+            <div class="ingredient-item">
+              <div class="ingredient-name">Saw Palmetto Extract</div>
+              <p class="ingredient-desc">Naturally blocks DHT — the hormone responsible for hair thinning — without synthetic side effects.</p>
+            </div>
+            <div class="ingredient-item">
+              <div class="ingredient-name">Biotin (Vitamin B7)</div>
+              <p class="ingredient-desc">Essential for keratin production. Strengthens hair strands and promotes scalp health.</p>
+            </div>
+            <div class="ingredient-item">
+              <div class="ingredient-name">Zinc & Magnesium</div>
+              <p class="ingredient-desc">Defends against stress-related shedding and keeps follicles active and nourished.</p>
+            </div>
+            <div class="ingredient-item">
+              <div class="ingredient-name">Ginseng Root Extract</div>
+              <p class="ingredient-desc">Improves scalp circulation and prevents apoptosis of dermal papilla cells.</p>
+            </div>
+            <div class="ingredient-item">
+              <div class="ingredient-name">Baicalensis Root Extract</div>
+              <p class="ingredient-desc">Anti-inflammatory properties that enhance Wnt signaling pathways for hair development.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tab-content" id="reviews">
+          <h3>Customer Reviews</h3>
+          <div style="display: flex; align-items: center; gap: var(--space-6); margin-bottom: var(--space-8);">
+            <div style="text-align: center;">
+              <div style="font-size: var(--text-5xl); font-weight: var(--font-semibold);">4.9</div>
+              <div class="rating-stars" style="justify-content: center;">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <div style="font-size: var(--text-sm); color: var(--color-text-muted);">1,695 reviews</div>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-2 gap-6">
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <p class="testimonial-content" style="font-size: var(--text-base);">"Tried Minoxidil but it made my hair shed more. With this, I saw growth without the shedding — and got my confidence back!"</p>
+              <div class="testimonial-author">
+                <div>
+                  <div class="testimonial-name">Daniel P.</div>
+                  <div class="testimonial-meta">New York • Verified Buyer</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <p class="testimonial-content" style="font-size: var(--text-base);">"After 3 months, my barber asked what I was using. My crown is filling in and the hairline looks way better."</p>
+              <div class="testimonial-author">
+                <div>
+                  <div class="testimonial-name">Marcus T.</div>
+                  <div class="testimonial-meta">Los Angeles • Verified Buyer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" style="margin-top: var(--space-16);">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="../../assets/images/logo-peptation.png" alt="PEPTATION">
+          </div>
+          <p class="footer-tagline">Advanced peptide technology for natural hair restoration.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Shop</h4>
+          <nav class="footer-links">
+            <a href="shop.html" class="footer-link">All Products</a>
+            <a href="product.html" class="footer-link">Hair Serum</a>
+            <a href="#" class="footer-link">Bundles</a>
+          </nav>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Learn</h4>
+          <nav class="footer-links">
+            <a href="how-it-works.html" class="footer-link">How It Works</a>
+            <a href="#" class="footer-link">Research</a>
+            <a href="faq.html" class="footer-link">FAQ</a>
+          </nav>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Support</h4>
+          <nav class="footer-links">
+            <a href="contact.html" class="footer-link">Contact</a>
+            <a href="#" class="footer-link">Shipping</a>
+            <a href="#" class="footer-link">Returns</a>
+          </nav>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 Peptation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Gallery
+    const mainImage = document.getElementById('mainImage');
+    const thumbs = document.querySelectorAll('.gallery-thumb');
+    
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        thumbs.forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+        mainImage.src = thumb.dataset.src;
+      });
+    });
+
+    // Quantity selector
+    const qtyOptions = document.querySelectorAll('.quantity-option');
+    const addToCartBtn = document.querySelector('.btn-add-cart');
+    
+    qtyOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        qtyOptions.forEach(o => o.classList.remove('active'));
+        option.classList.add('active');
+        const price = option.dataset.price;
+        addToCartBtn.textContent = `Add to Cart — $${price}`;
+      });
+    });
+
+    // Tabs
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+        
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

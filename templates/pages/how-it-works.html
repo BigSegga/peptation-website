@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Science | PEPTATION</title>
+  <meta name="description" content="How GHK-Cu copper peptides work to restore hair growth. The science behind Peptation's clinically-proven formula.">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <style>
+    /* Page-specific styles */
+    .science-hero {
+      position: relative;
+      padding: calc(80px + var(--space-20)) 0 var(--space-20);
+      background: linear-gradient(135deg, var(--color-primary) 0%, #2D2D44 100%);
+      color: var(--color-text-inverse);
+      overflow: hidden;
+    }
+    
+    .science-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: url('../../assets/images/product-bottle-box.jpg') center/cover no-repeat;
+      opacity: 0.15;
+      mask-image: linear-gradient(to left, black, transparent);
+      -webkit-mask-image: linear-gradient(to left, black, transparent);
+    }
+    
+    .science-hero-content {
+      position: relative;
+      max-width: 650px;
+    }
+    
+    .science-hero h1 {
+      font-size: var(--text-5xl);
+      margin-bottom: var(--space-6);
+      line-height: 1.1;
+    }
+    
+    .science-hero p {
+      font-size: var(--text-xl);
+      color: rgba(255,255,255,0.8);
+      line-height: var(--leading-relaxed);
+    }
+    
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding: var(--space-8) 0;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--color-border);
+      transform: translateX(-50%);
+    }
+    
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 24px;
+      }
+    }
+    
+    .timeline-item {
+      display: flex;
+      gap: var(--space-12);
+      margin-bottom: var(--space-16);
+      position: relative;
+    }
+    
+    .timeline-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    
+    @media (max-width: 768px) {
+      .timeline-item,
+      .timeline-item:nth-child(even) {
+        flex-direction: row;
+        gap: var(--space-8);
+        padding-left: var(--space-16);
+      }
+    }
+    
+    .timeline-content {
+      flex: 1;
+      max-width: 45%;
+    }
+    
+    @media (max-width: 768px) {
+      .timeline-content {
+        max-width: 100%;
+      }
+    }
+    
+    .timeline-marker {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 48px;
+      height: 48px;
+      background: var(--color-primary);
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-gold);
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: var(--font-semibold);
+      z-index: 1;
+    }
+    
+    @media (max-width: 768px) {
+      .timeline-marker {
+        left: 24px;
+        width: 40px;
+        height: 40px;
+        font-size: var(--text-lg);
+      }
+    }
+    
+    .timeline-card {
+      background: var(--color-background);
+      border: 1px solid var(--color-border);
+      padding: var(--space-8);
+      transition: all var(--transition-base);
+    }
+    
+    .timeline-card:hover {
+      border-color: var(--color-gold);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .timeline-card h3 {
+      font-size: var(--text-2xl);
+      margin-bottom: var(--space-4);
+    }
+    
+    .timeline-card p {
+      color: var(--color-text-muted);
+      line-height: var(--leading-relaxed);
+    }
+    
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-6);
+    }
+    
+    @media (max-width: 1024px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .stat-card {
+      background: var(--color-background);
+      border: 1px solid var(--color-border);
+      padding: var(--space-8);
+      text-align: center;
+      transition: all var(--transition-base);
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .stat-card .stat-value {
+      font-family: var(--font-display);
+      font-size: var(--text-5xl);
+      font-weight: var(--font-medium);
+      color: var(--color-gold);
+      line-height: 1;
+      margin-bottom: var(--space-3);
+    }
+    
+    .stat-card .stat-label {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+    }
+    
+    /* Molecule visualization */
+    .molecule-section {
+      background: var(--color-primary);
+      color: var(--color-text-inverse);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .molecule-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: center;
+    }
+    
+    @media (max-width: 1024px) {
+      .molecule-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-10);
+      }
+    }
+    
+    .molecule-visual {
+      position: relative;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .molecule-ring {
+      position: absolute;
+      border: 1px solid rgba(201, 162, 39, 0.3);
+      border-radius: 50%;
+      animation: pulse 4s ease-in-out infinite;
+    }
+    
+    .molecule-ring:nth-child(1) { width: 100%; height: 100%; animation-delay: 0s; }
+    .molecule-ring:nth-child(2) { width: 80%; height: 80%; animation-delay: 0.5s; }
+    .molecule-ring:nth-child(3) { width: 60%; height: 60%; animation-delay: 1s; }
+    .molecule-ring:nth-child(4) { width: 40%; height: 40%; animation-delay: 1.5s; }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.02); }
+    }
+    
+    .molecule-center {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    
+    .molecule-label {
+      font-family: var(--font-display);
+      font-size: var(--text-4xl);
+      color: var(--color-gold);
+      margin-bottom: var(--space-2);
+    }
+    
+    .molecule-sublabel {
+      font-size: var(--text-sm);
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-widest);
+    }
+    
+    /* Research cards */
+    .research-card {
+      background: var(--color-surface);
+      padding: var(--space-8);
+      border-left: 4px solid var(--color-gold);
+      margin-bottom: var(--space-6);
+    }
+    
+    .research-card h4 {
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-3);
+    }
+    
+    .research-card p {
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-3);
+    }
+    
+    .research-source {
+      font-size: var(--text-xs);
+      color: var(--color-gold);
+      font-style: italic;
+    }
+    
+    /* Comparison */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: var(--space-8);
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+      padding: var(--space-5) var(--space-6);
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+    
+    .comparison-table th {
+      font-family: var(--font-display);
+      font-size: var(--text-sm);
+      font-weight: var(--font-medium);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+      background: var(--color-surface);
+    }
+    
+    .comparison-table th:first-child {
+      border-radius: var(--radius-md) 0 0 0;
+    }
+    
+    .comparison-table th:last-child {
+      border-radius: 0 var(--radius-md) 0 0;
+    }
+    
+    .comparison-table td {
+      font-size: var(--text-sm);
+    }
+    
+    .comparison-table tr:hover td {
+      background: var(--color-surface);
+    }
+    
+    .check-icon {
+      color: var(--color-success);
+    }
+    
+    .x-icon {
+      color: var(--color-error);
+    }
+    
+    .comparison-highlight {
+      background: linear-gradient(to right, rgba(201, 162, 39, 0.1), transparent);
+    }
+    
+    .comparison-highlight td:first-child {
+      font-weight: var(--font-semibold);
+      color: var(--color-gold);
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img src="../../assets/images/logo-peptation.png" alt="PEPTATION">
+        </a>
+        <nav class="nav">
+          <a href="index.html#science" class="nav-link">Science</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="how-it-works.html" class="nav-link">How It Works</a>
+          <a href="index.html#results" class="nav-link">Results</a>
+          <a href="index.html#faq" class="nav-link">FAQ</a>
+        </nav>
+        <div class="header-actions">
+          <a href="shop.html" class="btn btn-primary btn-sm">Shop Now</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="science-hero">
+    <div class="container">
+      <div class="science-hero-content">
+        <span class="hero-eyebrow" style="color: var(--color-gold);">The Science</span>
+        <h1>Why GHK-Cu Actually Works</h1>
+        <p>Not another miracle cure. Real science, real research, real results. Here's exactly how copper peptides restore your hair — and why everything else you've tried hasn't worked.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section" style="background: var(--color-surface);">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">36%</div>
+          <div class="stat-label">Hair Count Increase</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">180</div>
+          <div class="stat-label">Days to Full Results</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">0</div>
+          <div class="stat-label">Side Effects Reported</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">91%</div>
+          <div class="stat-label">Success Rate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="section-header">
+        <span class="section-eyebrow">Understanding Hair Loss</span>
+        <h2 class="section-title">Why Your Hair Is Thinning</h2>
+      </div>
+      
+      <div style="font-size: var(--text-lg); color: var(--color-text-muted); line-height: var(--leading-loose);">
+        <p style="margin-bottom: var(--space-6);">
+          Hair loss isn't random. It follows a predictable biological pattern driven by one primary culprit: <strong style="color: var(--color-text);">DHT (Dihydrotestosterone)</strong>.
+        </p>
+        <p style="margin-bottom: var(--space-6);">
+          DHT is created when an enzyme called 5-alpha reductase converts testosterone into its more potent form. While DHT is important for development, it becomes destructive when it accumulates in hair follicles.
+        </p>
+        <p style="margin-bottom: var(--space-6);">
+          When DHT binds to receptors in your follicles, it triggers <strong style="color: var(--color-text);">follicular miniaturization</strong> — your follicles progressively shrink, producing thinner, weaker hair until they stop producing altogether.
+        </p>
+        <p>
+          This is why most treatments fail. They address symptoms without targeting the underlying biological mechanisms. Peptation takes a different approach.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHK-Cu Section -->
+  <section class="section molecule-section">
+    <div class="container">
+      <div class="molecule-grid">
+        <div class="molecule-visual">
+          <div class="molecule-ring"></div>
+          <div class="molecule-ring"></div>
+          <div class="molecule-ring"></div>
+          <div class="molecule-ring"></div>
+          <div class="molecule-center">
+            <div class="molecule-label">GHK-Cu</div>
+            <div class="molecule-sublabel">Copper Tripeptide-1</div>
+          </div>
+        </div>
+        
+        <div>
+          <span class="section-eyebrow" style="color: var(--color-gold);">The Solution</span>
+          <h2 style="font-size: var(--text-4xl); margin-bottom: var(--space-6);">Meet GHK-Cu</h2>
+          <p style="color: rgba(255,255,255,0.8); line-height: var(--leading-relaxed); margin-bottom: var(--space-6);">
+            GHK-Cu (Glycyl-L-histidyl-L-lysine copper) is a naturally occurring copper peptide found in human blood plasma. It's not a drug — it's a compound your body already produces, just in smaller quantities as you age.
+          </p>
+          <p style="color: rgba(255,255,255,0.8); line-height: var(--leading-relaxed); margin-bottom: var(--space-8);">
+            Research shows GHK-Cu levels decline significantly after age 20. By reintroducing this peptide topically, we can reactivate the biological processes that promote healthy hair growth.
+          </p>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+            <div style="background: rgba(255,255,255,0.05); padding: var(--space-5); border: 1px solid rgba(255,255,255,0.1);">
+              <div style="color: var(--color-gold); font-weight: var(--font-semibold); margin-bottom: var(--space-2);">Reactivates Follicles</div>
+              <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.6);">Wakes up dormant hair follicles</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); padding: var(--space-5); border: 1px solid rgba(255,255,255,0.1);">
+              <div style="color: var(--color-gold); font-weight: var(--font-semibold); margin-bottom: var(--space-2);">Blocks DHT</div>
+              <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.6);">Naturally inhibits 5-alpha reductase</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); padding: var(--space-5); border: 1px solid rgba(255,255,255,0.1);">
+              <div style="color: var(--color-gold); font-weight: var(--font-semibold); margin-bottom: var(--space-2);">Reduces Inflammation</div>
+              <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.6);">Calms scalp irritation</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); padding: var(--space-5); border: 1px solid rgba(255,255,255,0.1);">
+              <div style="color: var(--color-gold); font-weight: var(--font-semibold); margin-bottom: var(--space-2);">Boosts IGF-1</div>
+              <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.6);">Increases growth factors</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Timeline -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">The Process</span>
+        <h2 class="section-title">How Peptation Works</h2>
+        <p class="section-subtitle">A two-phase approach that addresses both the symptoms and root cause of hair loss.</p>
+      </div>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker">1</div>
+          <div class="timeline-content">
+            <div class="timeline-card">
+              <h3>Open the Pathways</h3>
+              <p>In the first phase, GHK-Cu works to reopen the pathways that DHT has blocked. It improves blood circulation to the scalp, delivering essential nutrients and oxygen to follicles that have been starved.</p>
+              <p style="margin-top: var(--space-4);"><strong>You'll notice:</strong> Reduced shedding, healthier scalp feel.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-marker">2</div>
+          <div class="timeline-content">
+            <div class="timeline-card">
+              <h3>Reduce Inflammation</h3>
+              <p>GHK-Cu's powerful antioxidant properties neutralize the oxidative stress and inflammation caused by DHT. This creates a healthier environment for follicles to function.</p>
+              <p style="margin-top: var(--space-4);"><strong>You'll notice:</strong> Less irritation, improved scalp condition.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-marker">3</div>
+          <div class="timeline-content">
+            <div class="timeline-card">
+              <h3>Stimulate Growth Factors</h3>
+              <p>The peptide triggers increased production of IGF-1 (Insulin-like Growth Factor), the master regulator of hair growth. This promotes cell proliferation and extends the anagen (growth) phase.</p>
+              <p style="margin-top: var(--space-4);"><strong>You'll notice:</strong> Baby hairs appearing, existing hair feels stronger.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-marker">4</div>
+          <div class="timeline-content">
+            <div class="timeline-card">
+              <h3>Sustained Regrowth</h3>
+              <p>With consistent use, follicles that had miniaturized begin to recover. They produce progressively thicker, stronger terminal hairs. The hair growth cycle normalizes.</p>
+              <p style="margin-top: var(--space-4);"><strong>You'll notice:</strong> Visible density improvement, thicker strands, restored confidence.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Section -->
+  <section class="section" style="background: var(--color-surface);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">The Research</span>
+        <h2 class="section-title">Backed by Science</h2>
+        <p class="section-subtitle">GHK-Cu has been extensively studied in peer-reviewed research. Here's what the science says.</p>
+      </div>
+      
+      <div class="grid grid-cols-2 gap-8">
+        <div class="research-card">
+          <h4>36% Increase in Hair Count</h4>
+          <p>"Treatment with GHK-Cu showed a significant increase in hair count, with participants experiencing an average 36% improvement over 180 days."</p>
+          <span class="research-source">— Journal of Investigative Dermatology</span>
+        </div>
+        
+        <div class="research-card">
+          <h4>Improved Follicle Size</h4>
+          <p>"GHK-Cu treatment resulted in measurable increases in hair follicle size and hair shaft diameter, indicating reversal of miniaturization."</p>
+          <span class="research-source">— Molecular and Cellular Biochemistry</span>
+        </div>
+        
+        <div class="research-card">
+          <h4>Enhanced Growth Factor Expression</h4>
+          <p>"Copper peptides significantly upregulated expression of growth factors including IGF-1, VEGF, and FGF, all critical for hair follicle function."</p>
+          <span class="research-source">— International Journal of Molecular Sciences</span>
+        </div>
+        
+        <div class="research-card">
+          <h4>Zero Adverse Effects</h4>
+          <p>"Unlike synthetic treatments, GHK-Cu demonstrated an excellent safety profile with no significant adverse effects reported in clinical trials."</p>
+          <span class="research-source">— Journal of Cosmetic Dermatology</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="section-header">
+        <span class="section-eyebrow">Comparison</span>
+        <h2 class="section-title">Why Peptation Is Different</h2>
+      </div>
+      
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Peptation</th>
+            <th>Minoxidil</th>
+            <th>Finasteride</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="comparison-highlight">
+            <td>Side Effects</td>
+            <td><span class="check-icon">✓</span> None</td>
+            <td><span class="x-icon">✗</span> Scalp irritation, shedding</td>
+            <td><span class="x-icon">✗</span> Sexual dysfunction, depression</td>
+          </tr>
+          <tr>
+            <td>Targets Root Cause</td>
+            <td><span class="check-icon">✓</span> Yes</td>
+            <td><span class="x-icon">✗</span> No (vasodilator only)</td>
+            <td><span class="check-icon">✓</span> Partially</td>
+          </tr>
+          <tr>
+            <td>Natural Compound</td>
+            <td><span class="check-icon">✓</span> Yes</td>
+            <td><span class="x-icon">✗</span> No</td>
+            <td><span class="x-icon">✗</span> No</td>
+          </tr>
+          <tr>
+            <td>Initial Shedding</td>
+            <td><span class="check-icon">✓</span> None</td>
+            <td><span class="x-icon">✗</span> Common</td>
+            <td><span class="x-icon">✗</span> Possible</td>
+          </tr>
+          <tr>
+            <td>Anti-inflammatory</td>
+            <td><span class="check-icon">✓</span> Yes</td>
+            <td><span class="x-icon">✗</span> No</td>
+            <td><span class="x-icon">✗</span> No</td>
+          </tr>
+          <tr>
+            <td>Safe Long-term</td>
+            <td><span class="check-icon">✓</span> Yes</td>
+            <td><span class="check-icon">✓</span> Yes</td>
+            <td><span class="x-icon">✗</span> Concerns</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">Ready to See the Science Work for You?</h2>
+      <p class="cta-subtitle">Join thousands who've restored their hair with clinically-proven GHK-Cu. 90-day money-back guarantee.</p>
+      <a href="shop.html" class="btn btn-white btn-lg">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="../../assets/images/logo-peptation.png" alt="PEPTATION">
+          </div>
+          <p class="footer-tagline">Advanced peptide technology for natural hair restoration. Clinically proven. Zero side effects.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Shop</h4>
+          <nav class="footer-links">
+            <a href="shop.html" class="footer-link">All Products</a>
+            <a href="product.html" class="footer-link">GHK-Cu Serum</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer-title">Learn</h4>
+          <nav class="footer-links">
+            <a href="how-it-works.html" class="footer-link">How It Works</a>
+            <a href="#" class="footer-link">Research</a>
+            <a href="index.html#faq" class="footer-link">FAQ</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer-title">Support</h4>
+          <nav class="footer-links">
+            <a href="contact.html" class="footer-link">Contact</a>
+            <a href="#" class="footer-link">Shipping</a>
+            <a href="#" class="footer-link">Returns</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 Peptation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>

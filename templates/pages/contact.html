@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | PEPTATION</title>
+  <meta name="description" content="Get in touch with Peptation. We're here to help with orders, questions, and support.">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <style>
+    .contact-hero {
+      padding: calc(80px + var(--space-16)) 0 var(--space-16);
+      background: var(--color-primary);
+      color: var(--color-text-inverse);
+      text-align: center;
+    }
+    
+    .contact-hero h1 {
+      font-size: var(--text-4xl);
+      margin-bottom: var(--space-4);
+    }
+    
+    .contact-hero p {
+      color: rgba(255,255,255,0.7);
+      font-size: var(--text-lg);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: var(--space-12);
+      padding: var(--space-16) 0;
+    }
+    
+    @media (max-width: 1024px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Form */
+    .contact-form {
+      background: var(--color-background);
+      border: 1px solid var(--color-border);
+      padding: var(--space-10);
+    }
+    
+    .contact-form h2 {
+      font-size: var(--text-2xl);
+      margin-bottom: var(--space-6);
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+      margin-bottom: var(--space-4);
+    }
+    
+    .form-row.full {
+      grid-template-columns: 1fr;
+    }
+    
+    @media (max-width: 640px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+    
+    .form-label {
+      font-size: var(--text-sm);
+      font-weight: var(--font-medium);
+    }
+    
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: var(--space-4);
+      border: 1px solid var(--color-border);
+      font-size: var(--text-base);
+      font-family: inherit;
+      transition: border-color var(--transition-fast);
+    }
+    
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--color-primary);
+    }
+    
+    .form-textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      margin-top: var(--space-6);
+      width: 100%;
+      padding: var(--space-5);
+    }
+    
+    /* Info Cards */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+    }
+    
+    .info-card {
+      background: var(--color-surface);
+      padding: var(--space-8);
+      border-left: 4px solid var(--color-gold);
+    }
+    
+    .info-card h3 {
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-3);
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+    
+    .info-card h3 svg {
+      width: 20px;
+      height: 20px;
+      color: var(--color-gold);
+    }
+    
+    .info-card p {
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      line-height: var(--leading-relaxed);
+    }
+    
+    .info-card a {
+      color: var(--color-primary);
+      font-weight: var(--font-medium);
+    }
+    
+    .info-card a:hover {
+      color: var(--color-gold);
+    }
+    
+    /* FAQ Preview */
+    .faq-preview {
+      background: var(--color-background);
+      border: 1px solid var(--color-border);
+      padding: var(--space-8);
+      margin-top: var(--space-6);
+    }
+    
+    .faq-preview h3 {
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-4);
+    }
+    
+    .faq-preview-item {
+      padding: var(--space-4) 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    
+    .faq-preview-item:last-child {
+      border-bottom: none;
+    }
+    
+    .faq-preview-item a {
+      font-size: var(--text-sm);
+      color: var(--color-text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .faq-preview-item a:hover {
+      color: var(--color-gold);
+    }
+    
+    .faq-preview-item svg {
+      width: 16px;
+      height: 16px;
+      color: var(--color-text-muted);
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img src="../../assets/images/logo-peptation.png" alt="PEPTATION">
+        </a>
+        <nav class="nav">
+          <a href="index.html#science" class="nav-link">Science</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="how-it-works.html" class="nav-link">How It Works</a>
+          <a href="index.html#results" class="nav-link">Results</a>
+          <a href="index.html#faq" class="nav-link">FAQ</a>
+        </nav>
+        <div class="header-actions">
+          <a href="shop.html" class="btn btn-primary btn-sm">Shop Now</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="contact-hero">
+    <div class="container">
+      <h1>Get in Touch</h1>
+      <p>Have a question about your order or our products? We're here to help.</p>
+    </div>
+  </section>
+
+  <!-- Contact Content -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout">
+        <!-- Form -->
+        <div class="contact-form">
+          <h2>Send Us a Message</h2>
+          <form>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-input" required>
+              </div>
+            </div>
+            <div class="form-row full">
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" required>
+              </div>
+            </div>
+            <div class="form-row full">
+              <div class="form-group">
+                <label class="form-label">Subject</label>
+                <select class="form-select">
+                  <option value="">Select a topic...</option>
+                  <option>Order Status</option>
+                  <option>Shipping Question</option>
+                  <option>Returns & Refunds</option>
+                  <option>Product Question</option>
+                  <option>Subscription Help</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row full">
+              <div class="form-group">
+                <label class="form-label">Order Number (if applicable)</label>
+                <input type="text" class="form-input" placeholder="e.g., #PEP-12345">
+              </div>
+            </div>
+            <div class="form-row full">
+              <div class="form-group">
+                <label class="form-label">Message</label>
+                <textarea class="form-textarea" placeholder="How can we help you?" required></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
+          </form>
+        </div>
+        
+        <!-- Info -->
+        <div class="contact-info">
+          <div class="info-card">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              Email Support
+            </h3>
+            <p>For general inquiries and support:</p>
+            <p style="margin-top: var(--space-2);"><a href="mailto:support@peptation.com">support@peptation.com</a></p>
+            <p style="margin-top: var(--space-3); font-size: var(--text-xs);">Response time: Within 24 hours</p>
+          </div>
+          
+          <div class="info-card">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              Business Hours
+            </h3>
+            <p>Monday – Friday: 9am – 6pm EST</p>
+            <p>Saturday: 10am – 4pm EST</p>
+            <p>Sunday: Closed</p>
+          </div>
+          
+          <div class="info-card">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="3" width="15" height="13"/>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                <circle cx="5.5" cy="18.5" r="2.5"/>
+                <circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+              Shipping & Returns
+            </h3>
+            <p>Free worldwide shipping on all orders. 90-day money-back guarantee.</p>
+            <p style="margin-top: var(--space-3);"><a href="#">View shipping policy →</a></p>
+          </div>
+          
+          <!-- FAQ Preview -->
+          <div class="faq-preview">
+            <h3>Quick Answers</h3>
+            <div class="faq-preview-item">
+              <a href="index.html#faq">
+                <span>When will I see results?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </a>
+            </div>
+            <div class="faq-preview-item">
+              <a href="index.html#faq">
+                <span>How do I use the serum?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </a>
+            </div>
+            <div class="faq-preview-item">
+              <a href="index.html#faq">
+                <span>Are there any side effects?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </a>
+            </div>
+            <div class="faq-preview-item">
+              <a href="index.html#faq">
+                <span>What's your return policy?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="../../assets/images/logo-peptation.png" alt="PEPTATION">
+          </div>
+          <p class="footer-tagline">Advanced peptide technology for natural hair restoration.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Shop</h4>
+          <nav class="footer-links">
+            <a href="shop.html" class="footer-link">All Products</a>
+            <a href="product.html" class="footer-link">GHK-Cu Serum</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer-title">Learn</h4>
+          <nav class="footer-links">
+            <a href="how-it-works.html" class="footer-link">How It Works</a>
+            <a href="index.html#faq" class="footer-link">FAQ</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer-title">Support</h4>
+          <nav class="footer-links">
+            <a href="contact.html" class="footer-link">Contact</a>
+            <a href="#" class="footer-link">Shipping</a>
+            <a href="#" class="footer-link">Returns</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 Peptation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>

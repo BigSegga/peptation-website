@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | PEPTATION</title>
+  <meta name="description" content="Shop our complete line of peptide-based hair regrowth products. Serums, shampoos, supplements, and bundles.">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <style>
+    .shop-hero {
+      padding: calc(80px + var(--space-16)) 0 var(--space-16);
+      background-color: var(--color-primary);
+      color: var(--color-text-inverse);
+      text-align: center;
+    }
+    
+    .shop-hero h1 {
+      font-size: var(--text-5xl);
+      margin-bottom: var(--space-4);
+    }
+    
+    .shop-hero p {
+      color: rgba(255,255,255,0.7);
+      font-size: var(--text-lg);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .shop-filters {
+      padding: var(--space-6) 0;
+      border-bottom: 1px solid var(--color-border);
+      margin-bottom: var(--space-10);
+    }
+    
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-8);
+    }
+    
+    .filter-tab {
+      font-size: var(--text-sm);
+      font-weight: var(--font-medium);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+      color: var(--color-text-muted);
+      padding: var(--space-3) 0;
+      border-bottom: 2px solid transparent;
+      transition: all var(--transition-fast);
+      cursor: pointer;
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+    
+    .filter-tab:hover,
+    .filter-tab.active {
+      color: var(--color-primary);
+      border-bottom-color: var(--color-primary);
+    }
+    
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-8);
+    }
+    
+    @media (max-width: 1024px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .shop-hero h1 {
+        font-size: var(--text-4xl);
+      }
+    }
+    
+    .product-card-lg .product-image {
+      aspect-ratio: 1;
+    }
+    
+    .product-card-lg .product-info {
+      padding: var(--space-8);
+    }
+    
+    .product-card-lg .product-title {
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-2);
+    }
+    
+    .product-card-lg .product-description {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-4);
+    }
+    
+    .product-card-lg .product-actions {
+      display: flex;
+      gap: var(--space-3);
+      margin-top: var(--space-4);
+    }
+    
+    .guarantee-banner {
+      background-color: var(--color-surface);
+      padding: var(--space-12) 0;
+      text-align: center;
+      margin-top: var(--space-16);
+    }
+    
+    .guarantee-banner h3 {
+      font-size: var(--text-2xl);
+      margin-bottom: var(--space-3);
+    }
+    
+    .guarantee-banner p {
+      color: var(--color-text-muted);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img src="../../assets/images/logo-peptation.png" alt="PEPTATION">
+        </a>
+        
+        <nav class="nav">
+          <a href="index.html#science" class="nav-link">Science</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="how-it-works.html" class="nav-link">How It Works</a>
+          <a href="index.html#results" class="nav-link">Results</a>
+          <a href="index.html#faq" class="nav-link">FAQ</a>
+        </nav>
+        
+        <div class="header-actions">
+          <a href="#" class="btn btn-primary btn-sm">Cart (0)</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Shop Hero -->
+  <section class="shop-hero">
+    <div class="container">
+      <span class="hero-eyebrow">The Collection</span>
+      <h1>Shop All Products</h1>
+      <p>Clinically-formulated solutions for every stage of your hair restoration journey.</p>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="shop-filters">
+    <div class="container">
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All Products</button>
+        <button class="filter-tab" data-filter="treatment">Treatments</button>
+        <button class="filter-tab" data-filter="cleanse">Cleanse</button>
+        <button class="filter-tab" data-filter="supplements">Supplements</button>
+        <button class="filter-tab" data-filter="bundles">Bundles</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="products-grid">
+        
+        <!-- Product 1: Main Serum -->
+        <div class="product-card product-card-lg" data-category="treatment">
+          <div class="product-image">
+            <span class="product-badge">Flagship Product</span>
+            <img src="../../assets/images/product-bottle-box.jpg" alt="GHK-Cu Hair Growth Serum">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Treatment • 30ml</span>
+            <h3 class="product-title">GHK-Cu Hair Growth Serum</h3>
+            <p class="product-description">Our flagship formula. Concentrated copper peptides reactivate dormant follicles for visible regrowth in 4-6 weeks.</p>
+            <div class="product-price">
+              <span class="price-current">$59</span>
+              <span class="price-original">$89</span>
+            </div>
+            <div class="product-actions">
+              <a href="product.html" class="btn btn-primary w-full">View Product</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 2: Shampoo -->
+        <div class="product-card product-card-lg" data-category="cleanse">
+          <div class="product-image">
+            <img src="https://fleava.shop/cdn/shop/files/28.png" alt="Peptide Nourishing Shampoo">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Cleanse</span>
+            <h3 class="product-title">Peptide Nourishing Shampoo</h3>
+            <p class="product-description">Gentle, sulfate-free formula that cleanses while delivering peptides to your scalp. Use 2-3x weekly.</p>
+            <div class="product-price">
+              <span class="price-current">$34</span>
+              <span class="price-original">$49</span>
+            </div>
+            <div class="product-actions">
+              <a href="#" class="btn btn-primary w-full">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 3: Conditioner -->
+        <div class="product-card product-card-lg" data-category="cleanse">
+          <div class="product-image">
+            <img src="https://fleava.shop/cdn/shop/files/20.png" alt="Strengthening Conditioner">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Cleanse</span>
+            <h3 class="product-title">Strengthening Conditioner</h3>
+            <p class="product-description">Biotin-enriched conditioner that strengthens strands and promotes a healthy scalp environment.</p>
+            <div class="product-price">
+              <span class="price-current">$34</span>
+              <span class="price-original">$49</span>
+            </div>
+            <div class="product-actions">
+              <a href="#" class="btn btn-primary w-full">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 4: Supplements -->
+        <div class="product-card product-card-lg" data-category="supplements">
+          <div class="product-image">
+            <span class="product-badge">New</span>
+            <img src="https://fleava.shop/cdn/shop/files/Addaheading.png" alt="Hair Growth Supplements">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Supplements</span>
+            <h3 class="product-title">Daily Hair Growth Complex</h3>
+            <p class="product-description">Biotin, Zinc, Saw Palmetto, and essential vitamins to support healthy hair growth from within.</p>
+            <div class="product-price">
+              <span class="price-current">$39</span>
+              <span class="price-original">$59</span>
+            </div>
+            <div class="product-actions">
+              <a href="#" class="btn btn-primary w-full">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 5: Starter Kit -->
+        <div class="product-card product-card-lg" data-category="bundles">
+          <div class="product-image">
+            <span class="product-badge">Popular</span>
+            <img src="https://fleava.shop/cdn/shop/files/25_1.png" alt="Starter Kit">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Bundle</span>
+            <h3 class="product-title">Starter Kit</h3>
+            <p class="product-description">Serum + Shampoo. The perfect introduction to the Peptation system. Save 20%.</p>
+            <div class="product-price">
+              <span class="price-current">$79</span>
+              <span class="price-original">$98</span>
+            </div>
+            <div class="product-actions">
+              <a href="#" class="btn btn-primary w-full">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 6: Complete Kit -->
+        <div class="product-card product-card-lg" data-category="bundles">
+          <div class="product-image">
+            <span class="product-badge" style="background-color: var(--color-gold);">Best Value</span>
+            <img src="https://fleava.shop/cdn/shop/files/Serum_Scene03.png" alt="Complete Restoration Kit">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Bundle</span>
+            <h3 class="product-title">Complete Restoration Kit</h3>
+            <p class="product-description">Everything you need: Serum + Shampoo + Conditioner + Supplements. Save 30%.</p>
+            <div class="product-price">
+              <span class="price-current">$149</span>
+              <span class="price-original">$210</span>
+            </div>
+            <div class="product-actions">
+              <a href="#" class="btn btn-primary w-full">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Guarantee Banner -->
+  <section class="guarantee-banner">
+    <div class="container">
+      <h3>90-Day Money-Back Guarantee</h3>
+      <p>Over 91% of users see visible results. If you don't, you get a full refund. No questions asked.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="../../assets/images/logo-peptation.png" alt="PEPTATION">
+          </div>
+          <p class="footer-tagline">Advanced peptide technology for natural hair restoration. Clinically proven. Zero side effects.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Shop</h4>
+          <nav class="footer-links">
+            <a href="shop.html" class="footer-link">All Products</a>
+            <a href="product.html" class="footer-link">Hair Serum</a>
+            <a href="#" class="footer-link">Shampoo</a>
+            <a href="#" class="footer-link">Bundles</a>
+          </nav>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Learn</h4>
+          <nav class="footer-links">
+            <a href="how-it-works.html" class="footer-link">How It Works</a>
+            <a href="#" class="footer-link">Ingredients</a>
+            <a href="#" class="footer-link">Research</a>
+            <a href="faq.html" class="footer-link">FAQ</a>
+          </nav>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Support</h4>
+          <nav class="footer-links">
+            <a href="contact.html" class="footer-link">Contact Us</a>
+            <a href="#" class="footer-link">Shipping</a>
+            <a href="#" class="footer-link">Returns</a>
+            <a href="#" class="footer-link">Track Order</a>
+          </nav>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 Peptation. All rights reserved.</p>
+        <div class="footer-payments">
+          <span style="font-size: var(--text-xs); color: rgba(255,255,255,0.4);">Visa • Mastercard • Amex • PayPal</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Filter tabs
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Update active tab
+        filterTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        
+        const filter = tab.dataset.filter;
+        
+        // Filter products
+        productCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
